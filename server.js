@@ -45,8 +45,12 @@ app.get("/api/users/profile/:id", (req, res) => {
   Profile.handleProfile(req, res, db);
 });
 
-app.get("/api/companies/:name", (req, res) => {
+app.post("/api/companies/:name", (req, res) => {
   Company.handleCompany(req, res, db, io);
+});
+
+app.post("/api/users/logout", (req, res) => {
+  Profile.handleLogout(req, res, db);
 });
 
 let port = process.env.PORT || 4000;
@@ -54,4 +58,4 @@ const server = app.listen(port, () => {
   console.log(`app is running on port ${port}`);
 });
 
-var io = require("socket.io").listen(server);
+const io = require("socket.io").listen(server);

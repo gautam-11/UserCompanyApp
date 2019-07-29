@@ -14,7 +14,6 @@ const knex = require("knex")(options);
 //   .createTable("activeusers", table => {
 //     table.integer("user_id");
 //     table.string("company_name");
-//     table.string("status");
 //   })
 //   .then(() => console.log("table created"))
 //   .catch(err => {
@@ -51,18 +50,18 @@ const knex = require("knex")(options);
 const users = [
   {
     user_id: "1",
-    company_name: "Google",
-    status: "active"
+    company_name: "Google"
+    //status: "active"
   },
   {
     user_id: "2",
-    company_name: "Facebook",
-    status: "active"
+    company_name: "Facebook"
+    //status: "active"
   },
   {
     user_id: "3",
-    company_name: "Google",
-    status: "active"
+    company_name: "Google"
+    //status: "active"
   }
 ];
 

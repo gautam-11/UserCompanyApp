@@ -11,6 +11,17 @@ handleProfile = (req, res, db) => {
     .catch(err => res.status(400).json("error getting user"));
 };
 
+handleLogout = (req, res, db) => {
+  const { id } = req.body;
+  db("activeusers")
+    .where("user_id", id)
+    .del()
+    .then(res => {
+      console.log("fgfgfff" + res);
+    });
+};
+
 module.exports = {
-  handleProfile: handleProfile
+  handleProfile: handleProfile,
+  handleLogout: handleLogout
 };
